@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-export const SignIn = () => {
+export const SignUpAndSignIn = () => {
   const [email, setEmail] = useState("");
   const [passWord, setPassWord] = useState("");
 
@@ -28,7 +28,7 @@ export const SignIn = () => {
         onChange={(e) => setPassWord(e.target.value)}
         placeholder="Password"
       />
-			<button onClick={signIn}>Sign In</button>
+			<button onClick={signIn}>Sign Up And Sign In</button>
     </div>
   );
 };

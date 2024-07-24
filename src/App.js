@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { auth } from "./config/firebase";
-import { SignIn } from "./components/auth/Auth";
+import { SignUpAndSignIn } from "./components/auth/SignUpAndSignIn";
 import { SignOutButton } from "./components/auth/SignOutButton";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       Search and Destroy
-      {!isSignedIn && <SignIn />}
+      {!isSignedIn && <SignUpAndSignIn />}
       {isSignedIn && <SignOutButton />}
     </div>
   );
