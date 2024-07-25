@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import "./App.css";
 import { auth } from "./config/firebase";
 import PrivateRoute from "./components/navigation/PrivateRoute";
+import SignIn from "./components/auth/SignIn";
 import { SignUpAndSignIn } from "./components/auth/SignUpAndSignIn";
 import Home from "./components/Home";
 
@@ -28,10 +29,10 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* <Route path="/signin" element={<SignIn />} /> */}
-          <Route path="/signUp" element={<SignUpAndSignIn />} />
-          <Route path="/home" element={<PrivateRoute isSignedIn={isSignedIn}><Home /></PrivateRoute>} />
-          <Route path="/" element={isSignedIn ? <Navigate to="/home" /> : <Navigate to="/signUp" />} />
+        <Route path="/signUp" element={<SignUpAndSignIn />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/home" element={<PrivateRoute isSignedIn={isSignedIn}><Home /></PrivateRoute>} />
+        <Route path="/" element={isSignedIn ? <Navigate to="/home" /> : <Navigate to="/signIn" />} />
         </Routes>
       </div>
     </Router>
