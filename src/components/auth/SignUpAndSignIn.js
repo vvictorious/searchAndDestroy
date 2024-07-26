@@ -33,6 +33,7 @@ export const SignUpAndSignIn = () => {
         placeholder="Password"
       />
 			<button onClick={signIn}>Sign Up And Sign In</button>
+      <button onClick={() => navigate("/forgotPassword")}>ForgotPassword</button>
     </div>
   );
 };

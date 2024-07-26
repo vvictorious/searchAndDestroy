@@ -32,6 +32,7 @@ function SignIn() {
       />
       <button onClick={handleSignIn}>Sign In</button>
       <button onClick={() => navigate("/signUp")}>Sign Up</button>
+      <button onClick={() => navigate("/forgotPassword")}>ForgotPassword</button>
     </div>
   );
 }
