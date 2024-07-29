@@ -1,13 +1,11 @@
-import { useState } from "react";
-import { auth } from "../config/firebase";
 import { SignOutButton } from "./auth/SignOutButton";
 
-const Home = ({user}) => {
+const Home = ({user, setUser}) => {
 
   return (
     <div>
-      <h1>Welcome to the home page, {user.userName}</h1>
-      <SignOutButton />
+      <h1>Welcome to the home page, {user?.userName}</h1>
+      <SignOutButton setUser={setUser} />
     </div>
   );
 };

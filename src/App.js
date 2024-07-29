@@ -18,8 +18,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null)
 
-  console.log(user)
-
   const getUser = async () => {
     try {
       const currentUser = auth?.currentUser;
@@ -54,6 +52,7 @@ function App() {
   }, [isSignedIn, user])
 
   console.log('isSignedIn', isSignedIn)
+  console.log('User:', user)
 
   if (loading) {
     return <div>Loading...</div>;
@@ -66,7 +65,7 @@ function App() {
         <Route path="/signUp" element={<SignUpAndSignIn />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route path="/home" element={<PrivateRoute isSignedIn={isSignedIn}><Home user={user} /></PrivateRoute>} />
+        <Route path="/home" element={<PrivateRoute isSignedIn={isSignedIn}><Home user={user} setUser={setUser} /></PrivateRoute>} />
         <Route path="/" element={isSignedIn ? <Navigate to="/home" /> : <Navigate to="/signIn" />} />
         </Routes>
       </div>

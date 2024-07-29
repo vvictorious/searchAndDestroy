@@ -1,10 +1,11 @@
 import { auth } from "../../config/firebase";
 import { signOut } from "firebase/auth";
 
-export const SignOutButton = () => {
+export const SignOutButton = ({setUser}) => {
   const signOutOfCurrentSession = async () => {
     try {
 			await signOut(auth)
+      setUser(null)
     } catch (err) {
       console.error(err);
     }
