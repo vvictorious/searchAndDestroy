@@ -18,6 +18,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null)
 
+  // next steep is maybe get some challenges and sync up storage
+
   const getUser = async () => {
     try {
       const currentUser = auth?.currentUser;
